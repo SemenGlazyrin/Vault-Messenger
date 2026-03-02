@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+.env/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+!.env.example
+
+# Certificates (except examples)
+certs/*.pem
+certs/*.key
+certs/*.crt
+certs/**/*.pem
+certs/**/*.key
+certs/**/*.crt
+
+# Docker volumes
+pgdata/
+minio_data/
+
+# Test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated protobuf
+*_pb2.py
+*_pb2_grpc.py
+*_pb2.pyi

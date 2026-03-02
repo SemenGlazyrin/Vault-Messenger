@@ -1,0 +1,32 @@
+syntax = "proto3";
+package vault.auth;
+
+service AuthService {
+    rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+    rpc GetPublicKeys(GetPublicKeysRequest) returns (GetPublicKeysResponse);
+}
+
+message ValidateTokenRequest {
+    string token = 1;
+}
+
+message ValidateTokenResponse {
+    bool valid = 1;
+    string user_id = 2;
+    string username = 3;
+    bool is_admin = 4;
+}
+
+message GetPublicKeysRequest {
+    repeated string user_ids = 1;
+}
+
+message PublicKeyInfo {
+    string user_id = 1;
+    bytes signing_public_key = 2;
+    bytes x25519_public_key = 3;
+}
+
+message GetPublicKeysResponse {
+    repeated PublicKeyInfo keys = 1;
+}
